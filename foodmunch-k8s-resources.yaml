@@ -1,0 +1,450 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 6306150214319764e2e134bde34d4f286d19c454ee946089db834f2156bfd97d
+      cni.projectcalico.org/podIP: 192.168.137.65/32
+      cni.projectcalico.org/podIPs: 192.168.137.65/32
+    creationTimestamp: "2025-04-08T11:53:55Z"
+    generateName: foodmunch-deployment-56cb8fcd94-
+    labels:
+      app: foodmunch
+      pod-template-hash: 56cb8fcd94
+    name: foodmunch-deployment-56cb8fcd94-92lv8
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: foodmunch-deployment-56cb8fcd94
+      uid: 3c0b903c-772d-401a-8070-52161c38bb26
+    resourceVersion: "1564"
+    uid: 3961e4f9-9499-4a8f-8400-661f8167e52e
+  spec:
+    containers:
+    - image: sreeharshalakkappagari/foodmunch:latest
+      imagePullPolicy: Always
+      name: foodmunch
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources:
+        limits:
+          cpu: 100m
+          memory: 128Mi
+        requests:
+          cpu: 50m
+          memory: 64Mi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-lrxf2
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: ip-172-31-20-145
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-lrxf2
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-04-08T11:54:01Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2025-04-08T11:53:55Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-04-08T11:54:01Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-04-08T11:54:01Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-04-08T11:53:55Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://74e81449c5286c77ca7abfb81feb3ec26a32ec5b26edfcd69a831dbc2a2e7875
+      image: docker.io/sreeharshalakkappagari/foodmunch:latest
+      imageID: docker.io/sreeharshalakkappagari/foodmunch@sha256:bb2a90eee2017f342d19384b6db793610502514647abc9c8a8e606caf912ac36
+      lastState: {}
+      name: foodmunch
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-04-08T11:54:01Z"
+    hostIP: 172.31.20.145
+    hostIPs:
+    - ip: 172.31.20.145
+    phase: Running
+    podIP: 192.168.137.65
+    podIPs:
+    - ip: 192.168.137.65
+    qosClass: Burstable
+    startTime: "2025-04-08T11:53:55Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 49d0cedf33838a6b620fb64033789b9277c4fd1c43ef775c8fabb722735440dc
+      cni.projectcalico.org/podIP: 192.168.137.66/32
+      cni.projectcalico.org/podIPs: 192.168.137.66/32
+    creationTimestamp: "2025-04-08T11:53:55Z"
+    generateName: foodmunch-deployment-56cb8fcd94-
+    labels:
+      app: foodmunch
+      pod-template-hash: 56cb8fcd94
+    name: foodmunch-deployment-56cb8fcd94-jmvcl
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: foodmunch-deployment-56cb8fcd94
+      uid: 3c0b903c-772d-401a-8070-52161c38bb26
+    resourceVersion: "1555"
+    uid: 4219e937-1a76-44ef-abb3-175abf08a3b0
+  spec:
+    containers:
+    - image: sreeharshalakkappagari/foodmunch:latest
+      imagePullPolicy: Always
+      name: foodmunch
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources:
+        limits:
+          cpu: 100m
+          memory: 128Mi
+        requests:
+          cpu: 50m
+          memory: 64Mi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-cg2bk
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: ip-172-31-20-145
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-cg2bk
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-04-08T11:54:00Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2025-04-08T11:53:55Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-04-08T11:54:00Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-04-08T11:54:00Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-04-08T11:53:55Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://df46d42aca9bb0b17776fb908ce714b2cda2a5c58e37a85d2757cb7fd0e90e99
+      image: docker.io/sreeharshalakkappagari/foodmunch:latest
+      imageID: docker.io/sreeharshalakkappagari/foodmunch@sha256:bb2a90eee2017f342d19384b6db793610502514647abc9c8a8e606caf912ac36
+      lastState: {}
+      name: foodmunch
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-04-08T11:54:00Z"
+    hostIP: 172.31.20.145
+    hostIPs:
+    - ip: 172.31.20.145
+    phase: Running
+    podIP: 192.168.137.66
+    podIPs:
+    - ip: 192.168.137.66
+    qosClass: Burstable
+    startTime: "2025-04-08T11:53:55Z"
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"foodmunch-service","namespace":"default"},"spec":{"ports":[{"nodePort":30036,"port":80,"protocol":"TCP","targetPort":80}],"selector":{"app":"foodmunch"},"type":"NodePort"}}
+    creationTimestamp: "2025-04-08T11:53:55Z"
+    name: foodmunch-service
+    namespace: default
+    resourceVersion: "1519"
+    uid: 005a8b62-8166-4a6f-8a5f-dc0730d6335b
+  spec:
+    clusterIP: 10.110.47.241
+    clusterIPs:
+    - 10.110.47.241
+    externalTrafficPolicy: Cluster
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - nodePort: 30036
+      port: 80
+      protocol: TCP
+      targetPort: 80
+    selector:
+      app: foodmunch
+    sessionAffinity: None
+    type: NodePort
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: "2025-04-08T11:44:25Z"
+    labels:
+      component: apiserver
+      provider: kubernetes
+    name: kubernetes
+    namespace: default
+    resourceVersion: "199"
+    uid: 8a4a1f9d-68d8-48dd-b06f-cd77ec2c7474
+  spec:
+    clusterIP: 10.96.0.1
+    clusterIPs:
+    - 10.96.0.1
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 6443
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"name":"foodmunch-deployment","namespace":"default"},"spec":{"replicas":2,"selector":{"matchLabels":{"app":"foodmunch"}},"template":{"metadata":{"labels":{"app":"foodmunch"}},"spec":{"containers":[{"image":"sreeharshalakkappagari/foodmunch:latest","name":"foodmunch","ports":[{"containerPort":80}],"resources":{"limits":{"cpu":"100m","memory":"128Mi"},"requests":{"cpu":"50m","memory":"64Mi"}}}]}}}}
+    creationTimestamp: "2025-04-08T11:53:55Z"
+    generation: 1
+    name: foodmunch-deployment
+    namespace: default
+    resourceVersion: "1568"
+    uid: 8ec6f166-982b-4a46-82db-c950003e59bd
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 2
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: foodmunch
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: foodmunch
+      spec:
+        containers:
+        - image: sreeharshalakkappagari/foodmunch:latest
+          imagePullPolicy: Always
+          name: foodmunch
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 64Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 2
+    conditions:
+    - lastTransitionTime: "2025-04-08T11:54:01Z"
+      lastUpdateTime: "2025-04-08T11:54:01Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2025-04-08T11:53:55Z"
+      lastUpdateTime: "2025-04-08T11:54:01Z"
+      message: ReplicaSet "foodmunch-deployment-56cb8fcd94" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    observedGeneration: 1
+    readyReplicas: 2
+    replicas: 2
+    updatedReplicas: 2
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "2"
+      deployment.kubernetes.io/max-replicas: "3"
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2025-04-08T11:53:55Z"
+    generation: 1
+    labels:
+      app: foodmunch
+      pod-template-hash: 56cb8fcd94
+    name: foodmunch-deployment-56cb8fcd94
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: foodmunch-deployment
+      uid: 8ec6f166-982b-4a46-82db-c950003e59bd
+    resourceVersion: "1567"
+    uid: 3c0b903c-772d-401a-8070-52161c38bb26
+  spec:
+    replicas: 2
+    selector:
+      matchLabels:
+        app: foodmunch
+        pod-template-hash: 56cb8fcd94
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: foodmunch
+          pod-template-hash: 56cb8fcd94
+      spec:
+        containers:
+        - image: sreeharshalakkappagari/foodmunch:latest
+          imagePullPolicy: Always
+          name: foodmunch
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 64Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 2
+    fullyLabeledReplicas: 2
+    observedGeneration: 1
+    readyReplicas: 2
+    replicas: 2
+kind: List
+metadata:
+  resourceVersion: ""
